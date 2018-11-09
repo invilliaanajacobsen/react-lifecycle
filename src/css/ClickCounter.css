@@ -1,0 +1,10 @@
+.emoji {
+    font-family: Segoe UI Emoji, Segoe UI Symbol, Quivira, Symbola;
+    padding: 5px;
+    padding-top:10px;
+    background-color: aquamarine;
+}
+
+.padded {
+    padding:5px;
+}
