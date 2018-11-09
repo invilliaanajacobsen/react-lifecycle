@@ -1,3 +1,7 @@
-.padded {
-    padding:5px;
+.slideBar {
+    opacity: 1;
+}
+
+.hideBar {
+    opacity: 0;
 }

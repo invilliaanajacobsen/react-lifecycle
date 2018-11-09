@@ -13,12 +13,12 @@ class App extends Component {
   }
 
   componentWillMount() {
-    //console.log('I will mount App..')
+    console.log('--- App will mount!');
   }
 
   componentDidMount() {
     this.timer = setInterval(this.everyFiveSeconds.bind(this), 5000);
-    //console.log('Component did mount App'); 
+    console.log('--- App did mount');
   }
 
   everyFiveSeconds() {

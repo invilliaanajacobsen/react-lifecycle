@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ClickCounter from './ClickCounter.js'
+import '../css/PopularBar.css';
 
 var thumbsup = '\u{1F44D}'
 var thumbsdown = '\u{1F44E}'
@@ -7,24 +8,28 @@ var thumbsdown = '\u{1F44E}'
 class PopularBar extends Component {
   constructor() {
     super()
-    //console.log('--- PopularBar constructor is here!')
+    this.state = {show: true};
+    console.log('--- PopularBar constructor is here!');
   }
 
   componentWillMount() {
-    console.log('--- PopularBar will mount. Yay!')
+    console.log('--- PopularBar will mount. Yay!');
   }
 
   componentDidMount() {
-    // console.log('--- PopularBar did mount. upCount: ' + this.props.upCount + ', downCount: ' + this.props.downCount)
+    console.log('--- PopularBar did mount. upCount: ' + this.props.upCount + ', downCount: ' + this.props.downCount)
+  }
+  //TODO :: depreciado :'(
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.show !== this.state.show) {
+      let opaccityEffect = nextProps.show;
+      this.setState({show: opaccityEffect});  
+    }
   }
 
   render() {
-    if (!this.props.show) {
-      return (<div />)
-    }
-
     return (
-        <div className="padded" style={this.props.style}>
+        <div className={this.state.show ? 'slideBar' : 'hideBar' } style={this.props.style}>
           <ClickCounter
             emoji={thumbsup}
             count={this.props.upCount}

@@ -42,8 +42,8 @@ class ClickCounter extends Component {
   }
   
   getTotal() {
-    console.warn('count ',this.props.count);
-    console.warn('clickCount ',this.state.clickCount);
+    console.log('count ',this.props.count);
+    console.log('clickCount ',this.state.clickCount);
     return this.state.clickCount + this.props.count
   }
 
