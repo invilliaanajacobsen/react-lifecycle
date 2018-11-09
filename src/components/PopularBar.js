@@ -8,7 +8,7 @@ var thumbsdown = '\u{1F44E}'
 class PopularBar extends Component {
   constructor() {
     super()
-    this.state = {show: true};
+    this.state = {show: false};
     console.log('--- PopularBar constructor is here!');
   }
 
@@ -29,7 +29,7 @@ class PopularBar extends Component {
 
   render() {
     return (
-        <div className={this.state.show ? 'slideBar' : 'hideBar' } style={this.props.style}>
+        <div className={!this.state.show ? 'hideBar' : 'slideBar' } style={this.props.style}>
           <ClickCounter
             emoji={thumbsup}
             count={this.props.upCount}

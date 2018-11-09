@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      showPopularBar: true,
+      showPopularBar: false,
       upCount: 5,
       downCount: 8
     }
